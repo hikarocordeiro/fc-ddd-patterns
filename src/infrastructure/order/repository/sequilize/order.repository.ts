@@ -58,6 +58,7 @@ export default class orderRepository implements OrderRepositoryInterface {
           id,
         },
         rejectOnEmpty: true,
+        include: [{ model: OrderItemModel }],
       });
     } catch (error) {
       throw new Error("Order not found");
